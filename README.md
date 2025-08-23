@@ -1,5 +1,5 @@
-# AlexUtilsLib
-A Collection / Library Of Typically CLI Linux/Unix Utilities And Tools
+# <p align="center"> Alex Utilities Library 
+<p align="center"> A Collection / Library Of Typically CLI Linux/Unix Utilities And Tools
 <p align="center"> Originally Compiled With G++ (GNU/GCC) 
 
 ### Setup  
