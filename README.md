@@ -5,8 +5,8 @@
 ### Setup  
 Run `g++ -o /AlexUtilsLib/inject inject.cpp` <br>
 Run `g++ -o /AlexUtilsLib/canonize canonize.cpp` <br>
-- (or) Run `g++ -o /AlexUtilsLib/canonize/canonize2.cpp` <br>
-- (or) Run `gcc -o /AlexUtilsLib/canonize/canonize.c`
+- (or) Run `g++ -o /AlexUtilsLib/canonize canonize2.cpp` <br>
+- (or) Run `gcc -o /AlexUtilsLib/canonize canonize.c`
 
 ### Bootstrapping With canonize (Any Version) 
 Run `./canonize canonize ./canonize` <br>
