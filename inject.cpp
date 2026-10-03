@@ -1,6 +1,7 @@
 #include <iostream> 
 #include <fstream> 
 #include <string> 
+#include <cstring> 
 #include <cstdio>  
 
 int main(int argc, char *argv[]) { 
@@ -13,7 +14,7 @@ int main(int argc, char *argv[]) {
 		return -2; // Not Enough Args 
 	} 
 	std::ifstream file(argv[1]);
-        std::string* pHemp = new std::string("temp_"); 
+ std::string* pHemp = new std::string("temp_"); 
 	*pHemp+=argv[1]; 
 	char* THEMP = new char[(*pHemp).size()+1]; 
 	strcpy(THEMP, (*pHemp).c_str()); 
