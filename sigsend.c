@@ -6,7 +6,7 @@
 #include <stdlib.h> 
 
 
-int main(int argc, int *argv[]) { 
+int main(int argc, char *argv[]) { 
         if (argc > 1) { 
                 if (kill(-1, atoi((const char*)*(argv[1])))==-1) { 
                         printf("Error Sending Signal, Error Code -1 \n"); 
