@@ -46,6 +46,6 @@ int main(int argc, char *argv[]) {
 	file.close(); 
 	tfile.close();  
 	std::rename(THEMP, argv[1]); 
-	delete THEMP; 
+	delete[] THEMP; 
 	return 0; 
 } 
