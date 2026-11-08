@@ -15,7 +15,7 @@ Run `g++ -o /AlexUtilsLib/canonize canonize.cpp` <br>
 <p align="center"> Originally Compiled With rustc <br> 
 
 ### .RS Setup <br> 
-Run `rustc -o AlexLibUtils/rinject AlexLibUtils/rinject.rs` 
+Run `rustc -o AlexLibUtils/rinject AlexLibUtils/rinject.rs` <br> 
 Run `rustc -o AlexLibUtils/canonizer AlexLibUtils/canonize.rs` 
 
 ### Bootstrapping With canonize (Any Version) 
