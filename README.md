@@ -31,3 +31,6 @@ Run `./canonize inject ./inject`
 Generally Speaking, You Should Be Using An Absolute Path Instead Of A Relative One, So You Can Use The Tool Anywhere. As Such, The Following Example Outlines The Best Practice For All Usage: 
 
 `./canonize canonize /dir/subdir/canonize` 
+
+<br> <br> 
+Note: injectCX (inject-CustomX) Is A Custom Version Of inject That Uses Memory For Holding All Data Instead Of Disk. This Means That While It Is Faster And More Efficient, It’s Incapable Of Handling Files That Are Larger Than The Amount Of Available System RAM. As Such, Large Files Should Be Handled With Regular inject. 
