@@ -16,6 +16,7 @@ Run `g++ -o /AlexUtilsLib/canonize canonize.cpp` <br>
 
 ### .RS Setup <br> 
 Run `rustc -o AlexLibUtils/rinject AlexLibUtils/rinject.rs` 
+Run `rustc -o AlexLibUtils/canonizer AlexLibUtils/canonize.rs 
 
 ### Bootstrapping With canonize (Any Version) 
 Run `./canonize canonize ./canonize` <br>
