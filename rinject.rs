@@ -32,7 +32,7 @@ fn main() -> std::io::Result<()> {
         if i == args[2].parse()? { } 
     */ 
     if contents.len() < 1 && args[2].parse::<usize>().unwrap() > 0 { // Sexy Short Circuiting 
-        contents.push(" \n{}"); 
+        contents.push(" \n"); 
         contents.push(&nstr); 
         fs::write(&args1, contents.join("\n"))?; 
     } 
