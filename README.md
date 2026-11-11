@@ -19,7 +19,7 @@ Run `rustc -o AlexUtilsLib/rinject AlexUtilsLib/rinject.rs` <br>
 Run `rustc -o AlexUtilsLib/canonizer AlexUtilsLib/canonize.rs` <br> 
 
 
-- Repeat For Any Other Binaries. -C opt-level=3 Optimizations Have Been Tested On `rinject` And `canonizer` As Working. <br> 
+- Repeat For Any Other Binaries. `-C opt-level=3` Optimizations Have Been Tested On `rinject` And `canonizer` As Working. <br> 
 
 ### Bootstrapping With canonize (Any Version) 
 Run `./canonize canonize ./canonize` <br>
