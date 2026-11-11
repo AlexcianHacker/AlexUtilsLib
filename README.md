@@ -9,14 +9,17 @@ Run `g++ -o /AlexUtilsLib/canonize canonize.cpp` <br>
 - (or) Run `gcc -o /AlexUtilsLib/canonize canonize.c` <br> 
 
 
-- Repeat For Any Other Binaries. -O3 Optimizations Have Been Tested On `inject`, `injectCX` And `canonize` As Working. <br> 
+- Repeat For Any Other Binaries. -O3 Optimizations Have Been Tested On `inject`, `injectCX`, `hconvc++` And `canonize` As Working. <br> 
 
 ### <p align="center"> .RS Portions (Rewrites) 
 <p align="center"> Originally Compiled With rustc <br> 
 
 ### .RS Setup <br> 
 Run `rustc -o AlexUtilsLib/rinject AlexUtilsLib/rinject.rs` <br> 
-Run `rustc -o AlexUtilsLib/canonizer AlexUtilsLib/canonize.rs` 
+Run `rustc -o AlexUtilsLib/canonizer AlexUtilsLib/canonize.rs` <br> 
+
+
+- Repeat For Any Other Binaries. -C opt-level=3 Optimizations Have Been Tested On `rinject` And `canonizer` As Working. <br> 
 
 ### Bootstrapping With canonize (Any Version) 
 Run `./canonize canonize ./canonize` <br>
