@@ -9,7 +9,7 @@ Run `g++ -o /AlexUtilsLib/canonize canonize.cpp` <br>
 - (or) Run `gcc -o /AlexUtilsLib/canonize canonize.c` <br> 
 
 
-- Repeat For Any Other Binaries. -O3 Optimizations Have Been Tested On `inject` And `canonize` As Working. <br> 
+- Repeat For Any Other Binaries. -O3 Optimizations Have Been Tested On `inject`, `injectCX` And `canonize` As Working. <br> 
 
 ### <p align="center"> .RS Portions (Rewrites) 
 <p align="center"> Originally Compiled With rustc <br> 
