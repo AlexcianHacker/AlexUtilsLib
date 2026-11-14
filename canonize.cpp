@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
                 } 
                 file << "\"$@\""; 
                 file.close(); 
-                std::string cmdline = (std::string) "sudo chmod +x /usr/local/bin/" + (std::string) argv[1];
+                 std::string cmdline = ("sudo chmod +x /usr/local/bin/" + (std::string) argv[1]).c_str();
 
                 const char *cmd = (const char*) cmdline.c_str(); 
                 std::system(cmd); 
