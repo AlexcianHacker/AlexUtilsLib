@@ -14,9 +14,9 @@ impl std::process::Termination for acResult {
 */ 
 
 
-fn convH(inS: String) -> std::io::Result<(u8, String)> { 
+fn convH(inS: &str) -> std::io::Result<(u8, String)> { 
     let mut pres: String = String::new(); 
-    for chr in inS.chars() { // .chars() For Iterating Over String 
+    for chr in inS.bytes() { // .bytes() For Iterating Over String 
         pres += format!("{:#X} ", chr as u8).as_str(); 
         print!("{:#X} ", chr as u8); 
     } 
@@ -33,7 +33,7 @@ fn main() -> std::io::Result<std::process::ExitCode> {
         print!("Enter String To Convert To Hex Here: "); 
         std::io::stdout().flush()?; // Ensure stdout Gets Printed First 
         std::io::stdin().read_line(&mut inStr)?; 
-        let Ok((rc, _rs)) = convH(inStr.trim().to_string()) else { return Err(std::io::Error::other("Failure To Process String From Stdin Into Hex. ")); }; 
+        let Ok((rc, _rs)) = convH(inStr.trim()) else { return Err(std::io::Error::other("Failure To Process String From Stdin Into Hex. ")); }; 
         return Ok(std::process::ExitCode::from(rc)); 
         // return Ok((rc as i64, Some(rs))); 
     } 
@@ -45,11 +45,11 @@ fn main() -> std::io::Result<std::process::ExitCode> {
     let file = fs::File::open(inFile.trim())?; // Trim To Remove Trailing Chars 
     let mut code: u8 = 0; 
     for line in std::io::BufReader::new(file).lines() { 
-        let lin = line?; 
+        let lin: &str = &line?; 
         code += convH(lin)?.0; // Old: "as i64" 
         // ((code, _)) = convH(lin)?; 
     } 
-    // fs::write("g.txt", "f* ahh ")?;
+    // fs::write("g.txt", "f* ahh")?;
     //let text: String =fs::read_to_string(
     // for i in args { println!("{} \n", i); }
     return Ok(std::process::ExitCode::from(code)); 
