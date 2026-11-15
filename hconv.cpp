@@ -1,5 +1,5 @@
 // HEX CONVERTER  
-
+ 
 #include <iostream> 
 #include <fstream> 
 #include <cstdlib> 
@@ -8,18 +8,18 @@
 
 
 struct Result { 
-    int rcode; 
-    std::string text; 
+    const int rcode; 
+    const std::string text; 
 }; 
 
-Result convH(std::string inS) { 
+Result convH(const char* inS) { 
     std::stringstream pres; 
     // std::string res; 
-    for (int i = 0; i<std::strlen(inS.c_str());++i) { 
+    for (size_t i = 0; i<std::strlen(inS);++i) { 
         // std::stringstream ss; 
         pres.str(""); // Clear The Stringstream After Every Iteration  
         pres << "0x"; 
-        pres << std::hex << (int)((unsigned char) inS[i]); 
+        pres << std::hex << (unsigned int)((unsigned char) inS[i]); 
         pres << " "; 
         std::cout << pres.str(); 
     } 
@@ -29,29 +29,30 @@ Result convH(std::string inS) {
 
 
 int main(int argc, char *argv[]) { 
-    bool strIO = 0; 
     if (argc>1) { 
         for (int i = 1; i<argc; i++) { 
-            if (std::string(argv[i]) == "s") { 
-                strIO=1;
-            }
-        }
-        if (strIO) { 
-            std::string inStr; 
-            std::cout << "Enter String To Convert To Hex Here: "; 
-            std::cin >> inStr; 
-            return convH(inStr).rcode;   
+            if (std::strcmp(argv[i], "s") == 0) { 
+                std::string inStr; 
+                std::cout << "Enter String To Convert To Hex Here: "; 
+                while (std::getline(std::cin, inStr) && inStr.empty()) { 
+                    std::cout << "Enter String To Convert To Hex Here: "; 
+                } 
+                return convH(inStr.c_str()).rcode;   
+            } 
         } 
     } 
     std::string inFile; 
     std::cout << "Enter File Name To Convert To Hex Here: "; 
-    std::cin >> inFile; 
+    while (std::getline(std::cin, inFile) && inFile.empty()) { 
+        std::cout << "Enter File Name To Convert To Hex Here: "; 
+    } 
     std::ifstream fi(inFile); 
+    if (!fi) { std::cerr << "Can't Open File \n"; fi.close(); return -1; } 
     int code = 0; 
     unsigned long line = 0; 
     std::string lin; 
     while (std::getline(fi, lin)) { 
-        code += convH(lin).rcode; 
+        code += convH(lin.c_str()).rcode; 
         line++; 
     } 
     fi.close(); 
