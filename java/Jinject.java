@@ -45,6 +45,7 @@ class Jinject {
             catch (IOException err) { 
                 System.err.println("Error Writing File; " + err.getMessage()); 
             } 
+            reader.close(); 
         } 
         catch (FileNotFoundException e) { 
             System.err.println("Error, File Not Found; " + e.getMessage()); 
